@@ -28,4 +28,16 @@ class MySizes{
   static double containerLoginH        = 60;
 
 
+  /// Home Sizes
+  static double tittleHome             = 20;
+  static double subTittleHome          = 15;
+
+  // Padding Home
+  static double homePadding            = 15;
+
+  // Boxes Home
+  static double tourBoxH               = 0.2;
+  static double tourBoxW               = 0.6;
+
+
 }

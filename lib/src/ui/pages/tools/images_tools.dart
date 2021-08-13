@@ -9,4 +9,15 @@ class MyImages extends GlobalPatch{
   String password(){
     return '$IMAGES/key.png';
   }
+
+
+  String loadingImage(){
+    return '$IMAGES/loading.gif';
+  }
+
+  String noImage(){
+    return '$IMAGES/no-image.jpg';
+  }
+
+
 }

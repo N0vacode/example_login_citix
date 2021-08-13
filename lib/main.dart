@@ -1,6 +1,8 @@
+
 import 'package:citix/src/providers/login_form_provider.dart';
 import 'package:citix/src/services/auth_service.dart';
 import 'package:citix/src/ui/main_router.dart';
+import 'package:citix/src/ui/pages/entities/user.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -12,7 +14,8 @@ void main() {
     MultiProvider(
         providers: [
           ChangeNotifierProvider<LoginFormProvider> ( create: ( context ) => LoginFormProvider(), ),
-          ChangeNotifierProvider<AuthService> ( create: ( context ) => AuthService(), ),
+          ChangeNotifierProvider<AuthService>       ( create: ( context ) => AuthService(), ),
+          ChangeNotifierProvider<User>              ( create: ( context ) => User(), ),
         ],
         child: MyApp(),
     ),
@@ -21,6 +24,7 @@ void main() {
 
   );
 }
+
 
 
 class MyApp extends StatelessWidget {

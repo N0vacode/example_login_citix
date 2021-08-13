@@ -12,4 +12,7 @@ class MyColors{
  static Color textInputBorder      = Colors.deepPurple;
 
 
+ /// Home COlors
+ static Color tittleHomeColor      = Color( 0xFF154F65 );
+
 }

@@ -1,4 +1,3 @@
-import 'package:citix/src/providers/login_form_provider.dart';
 import 'package:citix/src/ui/pages/login/widget/login_form.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -12,7 +11,7 @@ import 'package:citix/src/ui/pages/login/widget/register_button.dart';
 import 'package:citix/src/ui/pages/tools/colors_tools.dart';
 import 'package:citix/src/ui/pages/tools/querry_global_tools.dart';
 import 'package:citix/src/ui/pages/tools/size_tools.dart';
-import 'package:provider/provider.dart';
+
 
 
 
@@ -63,6 +62,7 @@ class _LoginPageState extends State<LoginPage> {
                     SizedBox(
                       height: Qu.globalScreen(context).height * MySizes.paddongTopLogin,
                     ),
+
                     LoginButton(),
 
                     Row(
@@ -82,6 +82,7 @@ class _LoginPageState extends State<LoginPage> {
           ),
         ),
       ),
+      
     );
   }
 }

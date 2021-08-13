@@ -1,7 +1,9 @@
+import 'dart:math';
+
 import 'package:citix/src/providers/login_form_provider.dart';
 import 'package:citix/src/services/auth_service.dart';
+import 'package:citix/src/ui/pages/login/widget/dialog_login.dart';
 import 'package:citix/src/ui/pages/tools/colors_tools.dart';
-import 'package:citix/src/ui/pages/tools/querry_global_tools.dart';
 import 'package:citix/src/ui/pages/tools/size_tools.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
@@ -27,27 +29,25 @@ class _LoginButtonState extends State<LoginButton> {
           borderRadius: BorderRadius.circular(MySizes.borderRadiusButton,
           ),
         ),
+
         onPressed: loginForms.isLoading ? null: () async{
 
           FocusScope.of(context).unfocus();
 
           if( !loginForms.isValidForm() ) return;
 
-
           loginForms.isLoading = true;
 
-          final String? errorMessage = await authService.validateUser(
-              loginForms.email, loginForms.password);
+          final String? errorMessage = await authService.validateUser(context);
 
-          if( errorMessage == null ) {
-            Navigator.pushReplacementNamed(context, '/home_page');
-          } else {
-            print( errorMessage );
+          if( errorMessage == 'error' ) {
             loginForms.isLoading = false;
+
+            showDialog(context: context, builder: (BuildContext){
+              return DialogLogin( msm: 'Error de Usuario o Contraseña', );
+            });
+
           }
-
-
-          Navigator.pushReplacementNamed(context, '/home_page' );
 
 
         },

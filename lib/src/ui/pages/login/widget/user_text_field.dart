@@ -15,7 +15,6 @@ class UserTextField extends StatelessWidget {
     return TextFormField(
       autocorrect: false,
       keyboardType: TextInputType.emailAddress,
-      textCapitalization: TextCapitalization.sentences,
       decoration: InputDecorations.loginInputDecoration(
           context: context,
           hintText: 'name@domain.com',
